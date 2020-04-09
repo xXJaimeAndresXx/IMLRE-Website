@@ -1,0 +1,19 @@
+#title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#spot{
+  margin-top: 100px;
+  margin-left: 450px;
+}
+#principal{
+  background-color: #f7f7f7;
+}
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}

@@ -1,0 +1,45 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+
+.supp {
+    width: 40%;
+    max-width: 502px;
+    margin: 30px 5px;
+    padding: 5px 15px;
+    border: 2px solid #000;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.donation, .patreon {
+    width: 20%;
+    max-width: 250px;
+    margin: 30px 5px;
+    padding: 5px;
+    border: 2px solid #000;
+    float:left;
+}
+
+.donation p, .patreon p{
+    padding:10px;
+}
+
+.td, .tp{
+    text-align:center;
+}
+
+.dbtn, .pbtn {
+    text-align:center;
+}
+
+.donate, .subscribe{
+    background-color:steelblue;
+    text-decoration:none;
+    color:white;
+    margin:5px;
+    display:inline-block;
+    padding:5px 10px;
+}
