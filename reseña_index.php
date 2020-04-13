@@ -112,39 +112,51 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
         </form>
     </div>
     </section>
-    <?php
-  require 'php\conn.php';
-  $query= "SELECT * FROM reviews ";
-  $query_run=mysqli_query($conn,$query);
-  
-  while($row= mysqli_fetch_array($query_run))
-  {
-    ?>
+    
     
 
     <div class="album text-muted">
       <div class="container">
-
         <div class="row">
+          <?php
+  require 'php\conn.php';
+  $query= "SELECT * FROM reviews ";
+  $query_run=mysqli_query($conn,$query);
+
+  
+  while($row= mysqli_fetch_array($query_run))
+  {
+     $imagen= $row[4];
+     $descripcion= $row[2];
+     
+
+  
+    ?>
           <div class="card">
-           <img src="img/<?php echo $row['imagen'];?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
-            <p class="card-text"><?php echo $row['descripcion'];?></p>
+           <img src="img/<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+            <p class="card-text"><?php echo $descripcion;?></p>
           </div>
-          <div class="card">
-            <img data-src="img/<?php echo $row['imagen'];?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+
+<?php
+}
+?>
+
+<!--
+      <div class="card">
+            <img src="" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis.</p>
           </div>
           <div class="card">
-           <img data-src="holder.js/100px280/thumb" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+           <img src="" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis</p>
           </div>
 
           <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+            <img src="" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis</p>
           </div>
           <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+            <img src="" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis</p>
           </div>
           <div class="card">
@@ -165,13 +177,11 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis</p>
           </div>
         </div>
-
+-->
       </div>
     </div>
 
-        <?php
-      }
-        ?>
+     
 
 
 
