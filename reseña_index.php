@@ -114,15 +114,10 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
     </section>
     <?php
   require 'php\conn.php';
-  $queryy= "SELECT * FROM reviews";
-  $sqll=mysqli_query($conn,$queryy);
+  $query= "SELECT * FROM reviews ";
+  $query_run=mysqli_query($conn,$query);
   
-  if(!$sqll){
-    var_dump(mysqli_error($conn));
-    exit;
-  }
-
-  while($img= mysqli_fetch_array($sqll))
+  while($row= mysqli_fetch_array($query_run))
   {
     ?>
     
@@ -132,11 +127,11 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
 
         <div class="row">
           <div class="card">
-           <img src="img/<?php echo $img['imagen'];?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis </p>
+           <img src="img/<?php echo $row['imagen'];?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+            <p class="card-text"><?php echo $row['descripcion'];?></p>
           </div>
           <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
+            <img data-src="img/<?php echo $row['imagen'];?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis.</p>
           </div>
           <div class="card">
