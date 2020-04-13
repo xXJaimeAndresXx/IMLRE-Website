@@ -18,7 +18,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
 <head>
 	<meta charset="utf-8">
 	 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">--> 
-	<title></title>
+	<title>Reseñas</title>
 </head>
 <body>
 	
@@ -91,7 +91,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
                                 <option>Electronic </option>
                                 <option>Hip Hop</option>
                                 <option>Other</option>
-                                <option>Example one</option>
+                                
                             </select> 
                         </div>
                          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
@@ -120,26 +120,42 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
         <div class="row">
           <?php
   require 'php\conn.php';
-  $query= "SELECT * FROM reviews ";
+  $query= "SELECT * FROM reviews ORDER BY id DESC ";
   $query_run=mysqli_query($conn,$query);
 
   
   while($row= mysqli_fetch_array($query_run))
   {
-     $imagen= $row[4];
+     $id=$row[0];
+     $titulo= $row[1];
      $descripcion= $row[2];
-     
+     $texto= $row[3];
+     $imagen= $row[4];
 
   
     ?>
           <div class="card">
-           <img src="img/<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
-            <p class="card-text"><?php echo $descripcion;?></p>
+           <img src="img/<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 280px; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true" >
+            <p class="card-text"><?php echo $descripcion;?>
+             <!--<button type="button" class="btn btn-outline-info btn-sm" href=view.php?id<?php echo $id ?>>
+              Leer Mas
+            </button> -->
+            <a href=view.php?id=<?php echo $id ?> class="badge badge-info"> Ver mas</a>
+
+            </p>
+            
           </div>
+
+
 
 <?php
 }
 ?>
+
+
+
+            
+
 
 <!--
       <div class="card">
