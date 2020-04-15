@@ -21,9 +21,9 @@ body {
 /* CONTAINER */
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
-    margin: 1.6em auto;
+    margin: 1em auto;
     display: grid;
     gap: 1.6em;
     /* grid-template-columns: repeat(4, 1fr) 3%; */
@@ -31,9 +31,10 @@ body {
 }
 
 .container>.header, .container>.content, .container>.sidebar, .container>.footer, .container>div {
+    border-radius: 25px;
     background: #fff;
-    padding: 20px;
-    border: 1px solid #000000;
+    padding: 0px 0px 0px 0px;
+    border: 0px solid #000000;
 }
 
 .container>.header, .container>.footer {
@@ -48,35 +49,84 @@ body {
 }
 
 .content>.article {
-    background: #808e9b;
-    padding: 20px;
-    margin-top: 5px;
-    color: #dfe6e9
+    border-radius: 25px;
+    background: #d9d9d9;
+    padding: 20px 20px 20px 20px;
+    margin-top: 0px;
+    color: #ffffff
 }
 
 .content .article h1,
-.content .article p {
-    padding: 10px;
+.content .article a {
+    padding: 3px;
+    color: #385C85;
+    text-decoration:none;
+    font-style: oblique; 
+}
+.content .article h2{
+    padding: 3px;
+    color: #385C85;
+    text-decoration:none;
+    font-style: oblique; 
 }
 
-.container>.sidebar {
+.content .article p{
+    padding: 3px;
+    color: #0d0d0d;
+    text-decoration:none;
+    font-style: oblique; 
+}
+
+
+.container>.sidebar{
+    border-radius: 25px;
     grid-column: span 2;
     grid-row: span 4;
-    background: #485460;
+    background: #385C85;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-style: oblique;
+    padding: 4px 0px 4px 35px;
+
+}
+
+.content .sidebar h3{
+    color: #385C85;
+    text-decoration:none;
 }
 
 .container .sidebar img {
     display: block;
     width: 100%;
     margin-top: 5px;
-}
 
+
+
+}
+ .container .sidebar a {
+
+text-decoration:none;
+padding: 4px;
+color: #ffffff;
+font-style: oblique; 
+text-decoration-line: underline;
+
+}
+ .container .sidebar p,.container .sidebar h3 {
+
+text-decoration:none;
+color: #ffffff;
+font-style: oblique; 
+
+}
+.container .sidebar h1
+{
+    padding-left: -30px;
+}
 .container>.related-post {
-    background: #2d3436;
+    background: #ffffff;
     color: #ffffff;
     height: 180px;
     ;
@@ -108,4 +158,9 @@ body {
     .container .related-post {
         grid-column: 1/-1;
     }
+}
+
+.Titu
+{ 
+
 }
