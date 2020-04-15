@@ -42,19 +42,19 @@
 
 <?php
   require 'php\conn.php';
-  $query= "SELECT * FROM reviews WHERE id= '$id' ";
+  $query= "SELECT * FROM Albums,Resenias WHERE Resenias.idAlbum=Albums.idAlbum AND Albums.idAlbum = '$id' ";
   $query_run=mysqli_query($conn,$query);
 
   
   while($row= mysqli_fetch_array($query_run))
   {
-     $id=$row[0];
-     $titulo= $row[1];
-     $descripcion= $row[2];
-     $texto= $row[3];
-     $imagen= $row[4];
-     $genero= $row[5];
-     $year=$row[6];
+     $id=$row['idAlbum'];
+     $titulo= $row['Titulo'];
+     $descripcion= $row['Descripcion'];
+     $texto= $row['resenia'];
+     $imagen= $row['Link'];
+     $genero= $row['Genero'];
+     $year=$row['Anio'];
   }
 
   
@@ -73,7 +73,7 @@
                     <h5><?php echo $year;?></h5>
                 </div>
                 <div class="col-md-6">
-                    <img src="img/<?php echo $imagen;?>" alt=""/>
+                    <img src="<?php echo $imagen;?>" alt=""/>
                 </div>
             </div>
 
