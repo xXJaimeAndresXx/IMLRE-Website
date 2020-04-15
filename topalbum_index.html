@@ -20,16 +20,16 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="#" class="nav-link">Inicio</a>
+          <a href="index.html" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Reseñas</a>
+          <a href="reseña_index.php" class="nav-link">Reseñas</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Novedades</a>
+          <a href="topalbum_index.html" class="nav-link">Top Albums</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Apoyo</a>
+          <a href="apoyo_index.html" class="nav-link">Apoyo</a>
         </li>
 
       </ul>  

@@ -21,6 +21,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
 	<title>Reseñas</title>
 </head>
 <body>
+
 	
     <!--<div class="navbar navbar-inverse navbar-dark bg-dark">
       <div class="container d-flex justify-content-between">
@@ -48,7 +49,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
     </div>
 
    </nav>-->
-
+  <?php require 'php\conn.php';?>
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a href="index.html" class="navbar-brand">
       <img src="img/sunny.jpg" width="30px" height="30px" class="d-inline-block align-top" alt="real emo">
@@ -59,16 +60,16 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="#" class="nav-link">Inicio</a>
+          <a href="index.html" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Reseñas</a>
+          <a href="reseña_index.php" class="nav-link">Reseñas</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Novedades</a>
+          <a href="topalbum_index.html" class="nav-link">Top Albums</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Apoyo</a>
+          <a href="apoyo_index.html" class="nav-link">Apoyo</a>
         </li>
 
       </ul>  
@@ -79,32 +80,20 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
     <section class="jumbotron text-center">
        <div class="container">
         <h1 class="text-muted">Buscar Reseñas:</h1>
-        <form action="#" method="post" novalidate="novalidate">
+        <form action="search.php" method="POST" novalidate="novalidate">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <select class="form-control search-slt" id="exampleFormControlSelect1">
-                                <option>GENRE</option>
-                                <option>Rock</option>
-                                <option>Pop</option>
-                                <option>Electronic </option>
-                                <option>Hip Hop</option>
-                                <option>Other</option>
-                                
-                            </select> 
+                        <div class="col-lg-8 col-md-4 col-sm-15 p-1">
+                            <div class="active-cyan-4 mb-4">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="search">
+                            </div>
                         </div>
-                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <select class="form-control search-slt" id="exampleFormControlSelect1">
-                                <option>YEAR</option>
-                                <option>2018</option>
-                                <option>2019</option>
-                                <option>2020</option>
-                            </select>
-                        </div>
-                          
-                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <button type="button" class="btn btn-primary wrn-btn">Search</button>
+                         
+                     
+                        <div class="col-lg-4 col-md-3 col-sm-10 p-0">
+
+                            <button type="submit" class="btn btn-primary wrn-btn" name="submit-search">Search</button>
                         </div>
                     </div>
                 </div>
@@ -119,7 +108,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
       <div class="container">
         <div class="row">
           <?php
-  require 'php\conn.php';
+  
   $query= "SELECT * FROM reviews ORDER BY id DESC ";
   $query_run=mysqli_query($conn,$query);
 
@@ -191,9 +180,9 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
           <div class="card">
             <img data-src="holder.js/100px280/thumb" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet fermentum velit. Donec turpis metus, consequat vel aliquam venenatis</p>
-          </div>
+          </div>-->
         </div>
--->
+
       </div>
     </div>
 
