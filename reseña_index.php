@@ -51,7 +51,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
    </nav>-->
   <?php require 'php\conn.php';?>
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a href="index.html" class="navbar-brand">
+    <a href="index.php" class="navbar-brand">
       <img src="img/sunny.jpg" width="30px" height="30px" class="d-inline-block align-top" alt="real emo">
     IMLRE</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
