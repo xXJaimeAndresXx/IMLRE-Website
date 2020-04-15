@@ -1,21 +1,23 @@
 create database imlre;
 use imlre;
 ### Tablas 
-create table Usuarios(idUsuario int auto_increment primary key, Usuario varchar(40), correo varchar(40), pass varchar(10));
-create table comentarios(idcoment int auto_increment primary key, idUsuario int ,comentario varchar(150), Hora_fecha datetime, foreign key (idUsuario) references Usuarios(idUsuario) on delete no action on update no action);
-create table Resenias(idResenia int auto_increment primary key, resenia varchar(300), Hora_fecha datetime, NoComen int );
-create table Albums(idAlbum int auto_increment primary key, idResenia int, Descripcion varchar(200), Titulo varchar(50),Genero varchar(20), Anio char(5), Link varchar(100),imglink varchar(100), foreign key (idResenia) references Resenias(idResenia) on delete cascade on update cascade );
+create table Albums(idAlbum int auto_increment primary key, Descripcion varchar(1000), Titulo varchar(100),Genero varchar(40), Anio char(5), Link varchar(1000));
+create table Resenias(idResenia int auto_increment primary key,idAlbum int,resenia varchar(1000), Hora_fecha datetime, NoComen int , foreign key (idAlbum) references Albums (idAlbum) on delete cascade on update cascade);
+create table comentarios(idcoment int auto_increment primary key, idResenia int, comentario varchar(150), Hora_fecha datetime, foreign key (idResenia) references Resenias(idResenia) on delete no action on update no action);
 
-### vamos ademas de guardar los datos aqui crearlos tambien en la base de datos y darles permisos solo de consulta para que no siempre se este utilizando la conexion Root
-o asi y esta mas facil, ya vemos 
+### vamos ademas de guardar los datos aqui crearlos tambien en la base de datos y darles permisos solo de consulta para que no siempre se este utilizando la conexion Root o asi y esta mas facil, ya vemos 
 
+insert into Albums values ( default, 'Utah s the Used blasted on the scene with a more tragic, dark brand of emo with singer Bert McCracken screaming raw, violent explorations of self-abuse, loneliness' ,'Short Music for Short People', 'Punk-H', '1999' , 'https://e.snmc.io/i/150/w/f713b0ba7a458e9151160ee9619f98c6/2047021');
+insert into Albums values ( default, 'Utah s the Used blasted on the scene with a more tragic, dark brand of emo with singer Bert McCracken screaming raw, violent explorations of self-abuse, loneliness, suicide and death.' ,'The Used, ‘In Love and Death’', 'Emo', '2004' , 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-229591-34.-The-Used-In-Love-and-Death-2004.jpg?resize=1240,1240&w=385');
+insert into Albums values ( default, 'Utah s the Used blasted on the scene with a more tragic, dark brand of emo with singer Bert McCracken screaming raw, violent explorations of self-abuse, loneliness, suicide and death.' ,'The Used, ‘Into It. Over It., ‘Intersections’’', 'Emo', '2013' , 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-229587-40.-Into-It.-Over-It-Intersections-2013.jpg?resize=1240,1240&w=385' );
+insert into Albums values ( default, 'After releasing their first record in 1999, Orchid became a prime jumping-off point for the "screamo" bands that followed in their wake (not to mention the candy-coated hybrids that terrorized Warped Tours).', 'Orchid, ‘Gatefold’', 'Emo', '1999' , 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-229581-18.-Orchid-Gatefold-1999.jpg?resize=1240,1240&w=385');
 
-insert into Usuarios values(default, 'David' , 'David@gmail.com', 1234);
-insert into Usuarios values(default, 'Ruben' , 'RUBEN@gmail.com', 1234);
-insert into Usuarios values(default, 'Jaime' , 'JAIME@gmail.com', 1234);
-INSERT INTO Resenias values (default, 'Fat Mike, con su sello Fat Wreck Chords, cerró el siglo XX con una idea aparentemente 
-sencilla pero que nadie había hecho antes: recopilar en un solo disco un mogollón de canciones cortas.', '9999-12-31 23:59:59', 0 );
-insert into Albums values ( default,1, '[Compilation]' ,'Short Music for Short People', 'Punk-H', '1999' , 'https://e.snmc.io/i/150/w/f713b0ba7a458e9151160ee9619f98c6/2047021', 'https://e.snmc.io/i/150/w/f713b0ba7a458e9151160ee9619f98c6/2047021' );
-select * from albums;
-
-### Si necesitamos cambios en las tablas agregar campos quitar me dicen y paso los comandos
+INSERT INTO Resenias values (default,1, 'Fat Mike, con su sello Fat Wreck Chords, cerró el siglo XX con una idea aparentemente 
+sencilla pero que nadie había hecho antes: recopilar en un solo disco un mogollón de canciones cortas.', '9999-12-31 23:59:59', 2 );
+INSERT INTO Resenias values (default,2, 'Fat Mike, con su sello Fat Wreck Chords, cerró el siglo XX con una idea aparentemente 
+sencilla pero que nadie había hecho antes: recopilar en un solo disco un mogollón de canciones cortas.', '9999-12-31 23:59:59', 3 );
+INSERT INTO Resenias values (default,3, 'Fat Mike, con su sello Fat Wreck Chords, cerró el siglo XX con una idea aparentemente 
+sencilla pero que nadie había hecho antes: recopilar en un solo disco un mogollón de canciones cortas.', '9999-12-31 23:59:59', 6);
+INSERT INTO Resenias values (default,4, 'Fat Mike, con su sello Fat Wreck Chords, cerró el siglo XX con una idea aparentemente 
+sencilla pero que nadie había hecho antes: recopilar en un solo disco un mogollón de canciones cortas.', '2020-05-19 23:59:59', 2);
+insert into comentarios values(default, 1 , "perfecto album", '2020-04-13 23:59:59'  );
