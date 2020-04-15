@@ -93,7 +93,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
                      
                         <div class="col-lg-4 col-md-3 col-sm-10 p-0">
 
-                            <button type="submit" class="btn btn-primary wrn-btn" name="submit-search">Search</button>
+                            <button type="submit" class="btn btn-primary wrn-btn" name="submit-search">Buscar</button>
                         </div>
                     </div>
                 </div>
