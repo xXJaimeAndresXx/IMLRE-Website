@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="index.php" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
           <a href="reseña_index.php" class="nav-link">Reseñas</a>
@@ -70,7 +70,7 @@
 <?php 
 if(isset($_POST['submit-search'])){
 		$search= mysqli_real_escape_string($conn, $_POST['search']);
-		$query= "SELECT * FROM reviews WHERE titulo LIKE '%$search%' OR descripcion LIKE '%$search%' OR review LIKE '%$search%' OR descripcion LIKE '%$search%' OR genero LIKE '%$search%' OR year LIKE '%$search%'  ";
+		$query= "SELECT * FROM albums WHERE Titulo LIKE '%$search%' OR Descripcion LIKE '%$search%' OR Descripcion LIKE '%$search%' OR Genero LIKE '%$search%' OR Anio LIKE '%$search%'  ";
 		$query_run= mysqli_query($conn, $query);
 		$queryResult= mysqli_num_rows($query_run);
 		
@@ -81,15 +81,21 @@ if(isset($_POST['submit-search'])){
 		if($queryResult > 0){
 			while ($row= mysqli_fetch_array($query_run)) 
 			{
-				$id=$row[0];
-     			$titulo= $row[1];
-     			$descripcion= $row[2];
-     			$texto= $row[3];
-     			$imagen= $row[4];
+			//$id=$row[0];
+     //$titulo= $row[1];
+     //$descripcion= $row[2];
+     //$texto= $row[3];
+     //$imagen= $row[4];
+     $id=$row['idAlbum'];
+     $titulo= $row['Titulo'];
+     $descripcion= $row['Descripcion'];
+     $imagen= $row['Link'];
+     $genero= $row['Genero'];
+     $year=$row['Anio'];
 
 				?>
 				<div class="card">
-           <img src="img/<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 280px; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true" >
+           <img src="<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 280px; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true" >
             <p class="card-text"><?php echo $descripcion;?>
              <!--<button type="button" class="btn btn-outline-info btn-sm" href=view.php?id<?php echo $id ?>>
               Leer Mas

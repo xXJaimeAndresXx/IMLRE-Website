@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="index.php" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
           <a href="reseña_index.php" class="nav-link">Reseñas</a>

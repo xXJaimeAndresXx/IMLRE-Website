@@ -60,7 +60,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="index.php" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
           <a href="reseña_index.php" class="nav-link">Reseñas</a>
@@ -109,22 +109,28 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
         <div class="row">
           <?php
   
-  $query= "SELECT * FROM reviews ORDER BY id DESC ";
+  $query= "SELECT * FROM Albums ORDER BY idAlbum DESC ";
   $query_run=mysqli_query($conn,$query);
 
   
   while($row= mysqli_fetch_array($query_run))
   {
-     $id=$row[0];
-     $titulo= $row[1];
-     $descripcion= $row[2];
-     $texto= $row[3];
-     $imagen= $row[4];
+     //$id=$row[0];
+     //$titulo= $row[1];
+     //$descripcion= $row[2];
+     //$texto= $row[3];
+     //$imagen= $row[4];
+     $id=$row['idAlbum'];
+     $titulo= $row['Titulo'];
+     $descripcion= $row['Descripcion'];
+     $imagen= $row['Link'];
+     $genero= $row['Genero'];
+     $year=$row['Anio'];
 
   
     ?>
           <div class="card">
-           <img src="img/<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 280px; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true" >
+           <img src="<?php echo $imagen;?>" alt="100%x280" style="height: 280px; width: 280px; display: block;" src="http://via.placeholder.com/356x280" data-holder-rendered="true" >
             <p class="card-text"><?php echo $descripcion;?>
              <!--<button type="button" class="btn btn-outline-info btn-sm" href=view.php?id<?php echo $id ?>>
               Leer Mas
