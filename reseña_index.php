@@ -66,7 +66,7 @@ sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossor
           <a href="reseña_index.php" class="nav-link">Reseñas</a>
         </li>
         <li class="nav-item">
-          <a href="topalbum_index.html" class="nav-link">Top Albums</a>
+          <a href="topalbum_index.html" class="nav-link">Loved List</a>
         </li>
         <li class="nav-item">
           <a href="apoyo_index.html" class="nav-link">Apoyo</a>

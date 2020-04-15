@@ -5,6 +5,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
+
 <link rel="stylesheet" type="text/css" href="css/view.css">
 <head>
 	<title>Reseña</title>
@@ -26,7 +28,7 @@
           <a href="reseña_index.php" class="nav-link">Reseñas</a>
         </li>
         <li class="nav-item">
-          <a href="topalbum_index.html" class="nav-link">Top Albums</a>
+          <a href="topalbum_index.html" class="nav-link">Loved List</a>
         </li>
         <li class="nav-item">
           <a href="apoyo_index.html" class="nav-link">Apoyo</a>
@@ -78,6 +80,9 @@
             </div>
 
         </div>
+
+
+        
 
 
     <footer class="text-muted">
