@@ -1,45 +1,81 @@
-﻿*{
-    margin:0px;
-    padding:0px;
+﻿@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+
+
+.social-btn-holder{
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.social-btn-holder .btn-social{
+  font-size:12px;
+  font-weight:bold;
 }
 
-.supp {
-    width: 40%;
-    max-width: 502px;
-    margin: 30px 5px;
-    padding: 5px 15px;
-    border: 2px solid #000;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.btn-social{
+  color: white;
+  opacity:0.9;
+}
+.btn-social:hover {
+  color: white;
+  opacity:1;
+}
+.btn-facebook {
+background-color: #3b5998;
+}
+.btn-twitter {
+background-color: #00aced;
+}
+.btn-linkedin {
+background-color:#0e76a8;
+}
+.btn-github{
+  background-color:#000000;
+}
+.btn-google {
+  background-color: #c32f10;
+}
+.btn-stackoverflow{
+  background-color: #D38B28;
 }
 
-.donation, .patreon {
-    width: 20%;
-    max-width: 250px;
-    margin: 30px 5px;
-    padding: 5px;
-    border: 2px solid #000;
-    float:left;
+.btn-hackerrank{
+  background-color: #27AB5B;
+}
+.btn-soundcloud{
+  background-color: #FF7202;
 }
 
-.donation p, .patreon p{
-    padding:10px;
+
+
+.centered-text{
+  text-align: center;
 }
 
-.td, .tp{
-    text-align:center;
+/*NAV BAR*/
+.navbar .navbar-header{ /*  Correçao da margem esquerda */
+    padding-left:15px;
 }
 
-.dbtn, .pbtn {
-    text-align:center;
+
+.navbar .navbar-toggle {
+  position: relative;
+  width:34px;
+    height: 34px;
+  padding: 9px 5px;
+  border-color:transparent;
+  background-color: transparent;
 }
 
-.donate, .subscribe{
-    background-color:steelblue;
-    text-decoration:none;
-    color:white;
-    margin:5px;
-    display:inline-block;
-    padding:5px 10px;
+.navbar .navbar-toggle:hover {
+  border-color:transparent;
+  background-color: transparent;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
 }
