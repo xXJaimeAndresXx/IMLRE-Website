@@ -1,5 +1,22 @@
 <?php
 
+ if(!isset($_GET['id']))
+ {
+  $id1=0;
+ }
+ if (isset($_GET['id']))
+ {
+  $id1= $_GET['id'];
+ }
+
+echo "$id1";
+
+
+
+
+ if ($id1==1) {
+ 	# code...
+ echo "$id1";
   require 'php\conn.php';
 
 
@@ -29,11 +46,30 @@ if (isset($_POST['reg'])){
 
 	}
 }
+
+}
+if ($id1==0)
+{
+	session_start();
+	session_destroy();
+
+	header('Location: login.php');
+	exit();
+}
+if (isset($_POST['Salir']))
+{
+	session_start();
+	session_destroy();
+
+	header('Location: login.php');
+	exit();
+}
+
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Signer Register Form Flat Responsive Widget Template | Home :: w3layouts</title>
+<title>Reseñas</title>
 <!-- Custom Theme files -->
 <link href="css/styleregister.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
@@ -43,6 +79,9 @@ if (isset($_POST['reg'])){
 <meta name="keywords" content="Signer Register Form Responsive,Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <!--Google Fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script Language="JavaScript">
+if(window.history.forward(1) != null)   window.history.forward(1);
+</script>
 <!--Google Fonts-->
 </head>
 <body>
@@ -62,6 +101,7 @@ if (isset($_POST['reg'])){
 		<textarea type="text" name="Reseña" value='Reseña'class="phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Reseña';}" rows="20" cols="45">Reseña</textarea>
 	  <div class="send-button">
 	    <input  type="submit" name="reg" />
+	    <input  type="submit" name="Salir" value="Salir" />
 	  </div>
 	    
 
