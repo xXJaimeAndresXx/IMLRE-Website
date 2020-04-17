@@ -61,7 +61,7 @@
               </article>
            <?php
   require 'php\conn.php';
-  $query= "SELECT * FROM Albums LIMIT 3";
+  $query= "SELECT * FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY nocomen ASC LIMIT 3;";
   $query_run=mysqli_query($conn,$query);
   
     while($row = $query_run ->fetch_assoc())
@@ -131,7 +131,7 @@
 
 <?php
   require 'php\conn.php';
-  $query= "SELECT Titulo,Link,Albums.idAlbum FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY nocomen DESC LIMIT 5;";
+  $query= "SELECT Titulo,Link,Albums.idAlbum FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY nocomen DESC LIMIT 4;";
   $query_run=mysqli_query($conn,$query);
   
     while($row = $query_run ->fetch_assoc())

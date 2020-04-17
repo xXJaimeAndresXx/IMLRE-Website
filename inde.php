@@ -16,7 +16,7 @@ echo "$id1";
 
  if ($id1==1) {
  	# code...
- echo "$id1";
+ 
   require 'php\conn.php';
 
 
@@ -43,16 +43,19 @@ if (isset($_POST['reg'])){
      while($row = $query_run ->fetch_assoc())
     {
       $ida=$row['idAlbum'];
-      echo " $ida ";
+ 
     }
      
      $consulta="INSERT INTO Resenias VALUES ( default ,'$ida' ,'$res', default, $noc );";
      $query_run=mysqli_query($conn,$consulta);
      if ($query_run) {
-     	echo "$ida";
-     	# code...
+     	echo " se Registro correctamente";
      }
-     else{echo "string";}
+     else
+     {
+     echo " Error";	
+     }
+     
 
 	}
 }

@@ -15,7 +15,7 @@ $dbPassword= trim($_POST['Pass']);
 $dbName='imlre';
 $conn= mysqli_connect($dbServername,$dbUsername,$dbPassword,$dbName);
 if($conn){
-$id=1;
+
 header("Location: inde.php?id=$id");
 exit;
 
