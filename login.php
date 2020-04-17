@@ -60,7 +60,7 @@ if(window.history.forward(1) != null)   window.history.forward(1);
 	<div class="signup-main">
 	  <form id="insertar"  method="post">
 		<input type="text" name="User" value="User"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Titulo';}"/>
-		<input type="psassword" name="Pass" value="Pass" class="lessgap"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Año';}"/>
+		<input type="password" name="Pass" value="password" class="lessgap"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Año';}"/>
 		
 	  <div class="send-button">
 	    <input type="submit" name="Reg"value="Login" />

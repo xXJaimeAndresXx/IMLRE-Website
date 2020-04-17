@@ -21,14 +21,16 @@ echo "$id1";
 
 
 if (isset($_POST['reg'])){
-	if (strlen($_POST['Titulo']) >= 1 && strlen($_POST['Año'])>= 1 && strlen($_POST['Descripcion'])>= 1 && strlen($_POST['Genero'])>= 1 && strlen($_POST['Link'])>= 1 && strlen($_POST['Reseña'])>= 1){
+	if (strlen($_POST['Titulo']) >= 1 && strlen($_POST['Año'])>= 1 && strlen($_POST['Descripcion'])>= 1 && strlen($_POST['Genero'])>= 1 && strlen($_POST['Link'])>= 1 && strlen($_POST['Reseña'])>= 1 && strlen($_POST['nocomen'])>= 1){
 
-     $titulo= trim($_POST['Titulo']);
-     $descripcion= trim($_POST['Descripcion']);
+     $titulo= addslashes(trim($_POST['Titulo']));
+     $descripcion= addslashes(trim($_POST['Descripcion']));
      $imagen= trim($_POST['Link']);
      $genero= trim($_POST['Genero']);
      $year=trim($_POST['Año']);
-     $res=trim($_POST['Reseña']);
+     $res=addslashes(trim($_POST['Reseña']));
+     $noc=addslashes(trim($_POST['nocomen']));
+    
   
 
      $consulta="INSERT INTO Albums VALUES ( default ,'$descripcion' ,'$titulo', '$genero', '$year' , '$imagen');";
@@ -36,13 +38,21 @@ if (isset($_POST['reg'])){
 
      $query= "SELECT idAlbum FROM Albums WHERE Titulo='$titulo'";
      $query_run=mysqli_query($conn,$query);
+     $ida="";
+
      while($row = $query_run ->fetch_assoc())
     {
-      $id=$row['idAlbum'];
+      $ida=$row['idAlbum'];
+      echo " $ida ";
     }
      
-     $consulta="INSERT INTO Resenias VALUES ( default ,'$id' ,'$res', default , '0');";
+     $consulta="INSERT INTO Resenias VALUES ( default ,'$ida' ,'$res', default, $noc );";
      $query_run=mysqli_query($conn,$consulta);
+     if ($query_run) {
+     	echo "$ida";
+     	# code...
+     }
+     else{echo "string";}
 
 	}
 }
@@ -98,6 +108,7 @@ if(window.history.forward(1) != null)   window.history.forward(1);
 		<input type="text" name="Descripcion" value="Descripcion" class="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Descripcion';}"/>
 		<input type="text" name="Genero" value="Genero"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Genero';}"/>
 		<input type="text" name="Link" value="Link img" class="lessgap" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Link img';}"/>
+		<input type="text" name="nocomen" value="NoComen" class="lessgap" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'NoComen';}"/>
 		<textarea type="text" name="Reseña" value='Reseña'class="phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Reseña';}" rows="20" cols="45">Reseña</textarea>
 	  <div class="send-button">
 	    <input  type="submit" name="reg" />

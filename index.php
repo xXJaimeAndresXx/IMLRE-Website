@@ -77,11 +77,11 @@
     <hr>
            
                 <article class="article">
-                <h1><a href="#"><?php echo $titulo;?></a></h1>
+                <h1><a href="view.php?id=<?php echo $id ?>"><?php echo stripslashes($titulo); ?></a></h1>
                 <a ><picture><img src="<?php echo $imagen;?>" alt="" style="height: 250px; width:250px; display: block;" ></picture></a>
                 <h2 class="anio"><?php echo $year;?></h2>
-                <P class="caja"><?php echo $descripcion;?> </P>
-                <a href=view.php?id=<?php echo $id ?> class="badge badge-info"> Ver mas</a>
+                <P class="caja"><?php echo stripslashes($descripcion);?> </P>
+                <a href="view.php?id=<?php echo $id ?>" class="badge badge-info"> Ver mas</a>
 
             </article>
 
@@ -96,20 +96,26 @@
                 <h1 align="center">Noveades</h1>
                          <?php
   require 'php\conn.php';
-  $query= "SELECT Titulo,Anio,Hora_fecha,Link FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY Hora_fecha DESC LIMIT 4;";
+  $query= "SELECT Titulo,Anio,Hora_fecha,Link,Albums.idAlbum FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY Hora_fecha DESC LIMIT 4;";
   $query_run=mysqli_query($conn,$query);
+  
   
     while($row = $query_run ->fetch_assoc())
     {
       
+     $id=$row['idAlbum'];
+     $titulo= $row['Titulo'];
+     $imagen= $row['Link'];
+     $Hora_fecha=$row['Hora_fecha'];
+     $year=$row['Anio'];
 
     ?>
     <hr>
     
-                <a><picture><img src="<?php echo $row['Link'];?>" alt="" style="height: 250px; width:250px; display: block;" ></picture></a>
-                <h3><a href=""><?php echo $row['Titulo'];?></a></h3>
-                <P class="anio"><?php echo $row['Anio'];?> </P>
-                <P class="caja"><?php echo $row['Hora_fecha'];?> </P>
+                <a><picture><img src="<?php echo $imagen;?>" alt="" style="height: 250px; width:250px; display: block;" ></picture></a>
+                <h3><a href=view.php?id=<?php echo $id ?>><?php echo $titulo;?></a></h3>
+                <P class="anio"><?php echo $year;?> </P>
+                <P class="caja"><?php echo $Hora_fecha;?> </P>
             </article>
     
             <?php
@@ -120,29 +126,35 @@
 
 <header class="header">
 
-            <h1 align="center">Top Albums</h1>
+            <h1 align="center">Top Album</h1>
         </header>
 
 <?php
   require 'php\conn.php';
-  $query= "SELECT Titulo,Link FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY NoComen DESC LIMIT 5;";
+  $query= "SELECT Titulo,Link,Albums.idAlbum FROM Resenias,Albums WHERE Resenias.idAlbum=Albums.idAlbum ORDER BY nocomen DESC LIMIT 5;";
   $query_run=mysqli_query($conn,$query);
   
     while($row = $query_run ->fetch_assoc())
     {
-      
+      $id=$row['idAlbum'];
 
     ?>
         <div class="related-post">
-          <a href="#"><picture><img src="<?php echo $row['Link'];?>" alt="" style="height: 180px; width:100%; display: block;" ></picture></a> 
+          <a href=view.php?id=<?php echo $id ?>><picture><img src="<?php echo $row['Link'];?>" alt="" style="height: 180px; width:100%; display: block;" ></picture></a> 
         </div>
                 <?php
       }
         ?>
+        <div class="related-post">
+          <p><a href="topalbum_index.html">Loved List</a></p>
+        </div>
   
         <footer class="footer">
-            <h4></h4>
-            <p></p>
+            <div class="container">
+        
+        <p align="center">IMLRE beta!</p>
+        
+      </div>
         </footer>
 
     </div>
