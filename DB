@@ -1,5 +1,5 @@
 create database imlre;
 use imlre;
 ### Tablas 
-create table Albums(idAlbum int auto_increment primary key, Descripcion varchar(1000), Titulo varchar(100),Genero varchar(40), Anio char(5), Link varchar(1000));
-create table Resenias(idResenia int auto_increment primary key,idAlbum int,resenia varchar(1000), Hora_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP, NoComen int , foreign key (idAlbum) references Albums (idAlbum) on delete cascade on update cascade);
+create table Albums(idAlbum int auto_increment primary key, Descripcion varchar(5000), Titulo varchar(300),Genero varchar(40), Anio char(5), Link varchar(1000));
+create table Resenias(idResenia int auto_increment primary key,idAlbum int,resenia varchar(10000), Hora_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,nocomen int, foreign key (idAlbum) references Albums (idAlbum) on delete cascade on update cascade);
